@@ -36,6 +36,7 @@ class DetailViewController: UIViewController {
         self.view.addSubview(self.imgView)
     }
     
+    // MARK: LABEL
     func addAlbumDescription() {
         descriptionLabel.numberOfLines = 0
         descriptionLabel.minimumScaleFactor = 0.5
@@ -68,7 +69,7 @@ class DetailViewController: UIViewController {
     }
     
     
-    
+    // MARK: BUTTON
     func addButton() {
         button.center.x = view.center.x
         button.setTitle("View on iTunes", for: .normal)

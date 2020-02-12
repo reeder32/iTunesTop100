@@ -25,6 +25,7 @@ struct Album {
         return UIImage(named: "no-thumbnail")
     }
 }
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -112,15 +113,16 @@ class ViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
-
+// MARK: NAVIGATION
     func goToDetailViewWithAlbum(_ album: Album) {
         let dvc = DetailViewController()
         dvc.album = album
         navigationController?.pushViewController(dvc, animated: true)
     }
 }
-
+// MARK: DELEGATE FOR ITUNES CONNECTOR
 extension ViewController: ConnectorDelegate {
+    // The messages are developer created...
     func didGetDataInWrongFormat(message: String) {
         showAlertWithMessage(message: message, fromVC: self)
     }
@@ -128,6 +130,7 @@ extension ViewController: ConnectorDelegate {
     
 }
 
+// MARK: CONVENIENCE
 extension UIViewController {
     func showAlertWithMessage(message: String?, fromVC: UIViewController) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
@@ -143,6 +146,7 @@ extension UIViewController {
     }
 }
 
+// MARK: TABLEVIEW
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
