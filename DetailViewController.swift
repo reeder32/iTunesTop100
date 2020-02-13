@@ -39,7 +39,7 @@ class DetailViewController: UIViewController {
     // MARK: LABEL
     func addAlbumDescription() {
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.minimumScaleFactor = 0.5
+        descriptionLabel.minimumScaleFactor = 0.25
         descriptionLabel.attributedText = createPrettyDescriptionLabel()
         self.view.addSubview(descriptionLabel)
     }
@@ -111,8 +111,9 @@ class DetailViewController: UIViewController {
         button.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -20).isActive = true
         
         descriptionLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 20).isActive = true
-        descriptionLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 40).isActive = true
+        descriptionLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.centerXAnchor).isActive = true
+        descriptionLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+      
     }
     
     
