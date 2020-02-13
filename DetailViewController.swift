@@ -111,8 +111,9 @@ class DetailViewController: UIViewController {
         button.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -20).isActive = true
         
         descriptionLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 20).isActive = true
-        descriptionLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.centerXAnchor).isActive = true
-        descriptionLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        descriptionLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.centerXAnchor, constant: 5).isActive = true
+        descriptionLabel.centerYAnchor.constraint(equalTo: margins.centerYAnchor).isActive = true
+        descriptionLabel.bottomAnchor.constraint(greaterThanOrEqualTo: margins.bottomAnchor, constant:  200).isActive = true
       
     }
     
